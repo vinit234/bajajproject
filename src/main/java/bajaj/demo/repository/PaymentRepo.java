@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PaymentRepo extends JpaRepository<Payment, Integer> {
-    @Query("SELECT new com.example.springdatajpaexample.dto.HighestSalaryDto(p.amount, CONCAT(e.firstName, ' ', e.lastName), FUNCTION('DATEDIFF', CURRENT_DATE(), e.dob) / 365, d.departmentName) " +
+    @Query("SELECT new bajaj.demo.dto.Highestsalary(p.amount, CONCAT(e.firstName, ' ', e.lastName), FUNCTION('DATEDIFF', CURRENT_DATE(), e.dob) / 365, d.departmentName) " +
             "FROM Payment p " +
             "JOIN p.employee e " +
             "JOIN e.department d " +
